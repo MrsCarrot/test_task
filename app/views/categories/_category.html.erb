@@ -1,0 +1,15 @@
+<article class="category">
+    <section class="category-head">
+        <h2><%= link_to category.title, category_path(category) %></h2>
+        
+        <%= link_to 'Edit', edit_category_path(category) %>
+        <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?'} %>
+
+    </section>
+
+    <section class="category-body clearfix">
+        <%= image_tag category.image_url(:thumb), class: 'image-thumbnail thumb' if category.image? %>
+        <%= category.body %>
+    </section>
+</article>
+
